@@ -1,0 +1,67 @@
+package support;
+
+
+//Classe qui servira a creer un Grid 2d des Carreaux et qui nous aidera a la manipulation de chaque
+public class GrilleCarreaux {
+	
+	private Carreau [][] map;		//Double array des Carreaux
+	private int NbSquareX, NbSquareY;
+
+	GrilleCarreaux(int NbSquareX, int NbSquareY){  //Definition d'une grille simple, on peut l'ignorer
+		map = new Carreau[NbSquareX][NbSquareY];
+		for (int i = 0; i < map.length; i++) {
+			for (int j = 0; j < map[i].length; j++) {
+				map[i][j] = new Carreau(i, j, (double) 1/NbSquareX, (double) 1/NbSquareY, "Grass");
+			}
+		}
+
+	}
+	
+	public GrilleCarreaux(int [][] newMap){    //Il prend le map definie dans la classe World     
+			this.NbSquareX = newMap[0].length;
+			this.NbSquareY = newMap.length;
+			
+			map = new Carreau[NbSquareX][NbSquareY];  
+			
+			for (int i = 0; i < map.length; i++) {
+				for (int j = 0; j < map[i].length; j++) {
+					if(newMap[j][i]==0)  //Si les valeurs sont 0/1 on definira le type de Carreau comme grass/dirt 
+						map[i][j] = new Carreau(i,j,(double) 1/NbSquareX, (double)1/NbSquareY, "grass");
+					else
+						map[i][j] = new Carreau(i, j, (double) 1/NbSquareX, (double)1/NbSquareY, "dirt");
+					
+				}	
+			}
+	}
+	
+	public void draw() {
+	
+		for (int i=0; i < map.length;i++) {
+			for(int j=0; j<map[j].length;j++) {
+					map[i][j].draw(); //On appelle le methode draw de la classe Carreau
+					
+			}
+		}
+		
+	}
+
+	public int getNbSquareX() {
+		return NbSquareX;
+	}
+
+	public void setNbSquareX(int nbSquareX) {
+		NbSquareX = nbSquareX;
+	}
+
+	public int getNbSquareY() {
+		return NbSquareY;
+	}
+
+	public void setNbSquareY(int nbSquareY) {
+		NbSquareY = nbSquareY;
+	}
+
+
+	
+	
+}

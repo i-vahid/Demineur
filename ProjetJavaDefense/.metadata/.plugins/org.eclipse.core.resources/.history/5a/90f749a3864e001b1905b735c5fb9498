@@ -1,0 +1,17 @@
+package support;
+
+public enum TypeCarreau {
+	
+	Grass("grass",true), Dirt("dirt",false);
+	
+	String textureName;
+	boolean buildable;
+	
+	TypeCarreau(String textureName ,boolean buildable){
+		this.textureName=textureName;
+		this.buildable=buildable;
+	}
+	
+
+
+}

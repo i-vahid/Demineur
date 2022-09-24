@@ -1,0 +1,14 @@
+package support;
+
+public class Design {
+	
+	public static final int WIDTH = 960, HEIGHT =640;
+	public static final int nbSquareX = 15;
+	public static final int nbSquareY = 10;
+	public static final int startX = 1;
+	public static final int startY = 9;	
+	
+		
+	
+
+}
